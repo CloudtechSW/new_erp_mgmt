@@ -1,0 +1,28 @@
+root {
+    display: block;
+}
+.invisible_btn
+{
+    -fx-background-color: transparent;
+}
+.button1:hover{
+    -fx-border-color:#660099;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-background-color: #fff;
+}
+.button2:hover{
+    -fx-border-color:#00ff66;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-background-color: #fff;
+}
+.button3:hover{
+    -fx-border-color:#0099ff;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-background-color: #fff;
+
+}
+.button4:hover{
+    -fx-border-color:#ff0033;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-background-color: #fff;
+}

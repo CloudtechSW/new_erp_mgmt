@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.new_erp_mgmt.Controllers.User.MDIController">
+    <children>
+        <MenuBar layoutX="-7.0" layoutY="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Masters">
+                    <items>
+                        <MenuItem fx:id="menu_Brand" mnemonicParsing="false" onAction="#MenuBrand_OnClick" text="Brand" />
+                        <MenuItem fx:id="menu_catgy" mnemonicParsing="false" onAction="#MenuCatgy_OnClick" text="Category" />
+                        <MenuItem mnemonicParsing="false" text="Customer" />
+                        <MenuItem fx:id="menu_dept" mnemonicParsing="false" onAction="#menuDept_onClick" text="Department" />
+                        <MenuItem fx:id="menu_desig" mnemonicParsing="false" onAction="#menuDesig_onClick" text="Designation" />
+                        <MenuItem fx:id="menu_item" mnemonicParsing="false" onAction="#menuItem_onClick" text="Item Master" />
+                        <MenuItem fx:id="menu_supplier" mnemonicParsing="false" onAction="#menuSupplier_onClick" text="Supplier" />
+                        <MenuItem fx:id="menu_tax" mnemonicParsing="false" onAction="#menuTax_onClick" text="Tax Master" />
+                        <MenuItem fx:id="menu_unit" mnemonicParsing="false" onAction="#menuUnit_onClick" text="Unit Master" />
+                        <MenuItem fx:id="menu_warehouse" mnemonicParsing="false" onAction="#menuWH_onClick" text="Ware House" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Sales">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="CRM">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="HRM">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Accounts">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Reports">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="User">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Settings">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About us">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <HBox layoutX="-3.0" layoutY="24.0" prefHeight="80.0" prefWidth="733.0" spacing="10.0" styleClass="hbx" stylesheets="@../../css/anchor.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <Button fx:id="btnDashboard" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transparent;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Dashboard">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/dashboard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnSales" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnSalesOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transparent;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Sales">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/pos.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnPurchase" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnPurchaseOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Purchase">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/shopping.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnLedger" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnLedgerOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Ledger">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/ledger.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnClients" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnClientsOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Clients">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/customer.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnEmploy" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnEmployOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Employes">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/laptop.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnSupplier" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Supplier">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/supplier64.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="btnItems" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnItemsOnAction" prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Items">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/stand.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" />
+            </padding>
+        </HBox>
+        <SplitPane dividerPositions="0.7941176470588235" layoutX="-3.0" layoutY="126.0" prefHeight="474.0" prefWidth="927.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+            <items>
+                <AnchorPane fx:id="anchrMain" minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="725.0" />
+                <AnchorPane fx:id="anchrSidebar" minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="364.0" />
+            </items>
+        </SplitPane>
+        <HBox layoutX="743.0" layoutY="25.0" prefHeight="100.0" prefWidth="177.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="lblUser" prefHeight="20.0" prefWidth="88.0" text="Hi, James">
+                    <HBox.margin>
+                        <Insets left="15.0" top="38.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnLogout" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="65.0" prefWidth="75.0" style="-fx-background-color: transperant;" styleClass="invisble_btn" stylesheets="@../../css/button.css" text="Logout">
+                    <HBox.margin>
+                        <Insets top="19.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/logout32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

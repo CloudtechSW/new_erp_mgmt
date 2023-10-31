@@ -1,0 +1,20 @@
+.anchr{
+-fx-border:solid;
+-fx-border-color: #C4C1A4;
+-fx-border-width: 1px 0px 1px 0px;
+ -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 15, 0.0 , 0 , 1 );
+}
+
+.anchr1{
+-fx-border:solid;
+-fx-border-color: #C4C1A4;
+-fx-border-width: 1px 1px 1px 1px;
+box-shadow: 10px 10px 5px black;
+}
+
+.hbx{
+-fx-border:solid;
+-fx-border-color: #C4C1A4;
+-fx-border-width: 1px 1px 1px 1px;
+-fx-background-color: #e8b454;
+}
