@@ -9,7 +9,9 @@ import com.example.new_erp_mgmt.Controllers.Masters.ItemMaster.ItemMasterControl
 import com.example.new_erp_mgmt.Controllers.Masters.SupplierMaster.SupplierMasterController;
 import com.example.new_erp_mgmt.Controllers.Masters.Tax.TaxController;
 import com.example.new_erp_mgmt.Controllers.Masters.Unit.UnitController;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -18,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -84,7 +87,7 @@ public class MDIController implements Initializable {
                 stage_brand.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
                 bc.setStage(stage_brand);
                 stage_brand.show();
-//                setFadeInTransition(root);
+                setFadeInTransition(root);
             } catch (IOException ex) {
                 Alert alt = new Alert(Alert.AlertType.ERROR,ex.getMessage(), ButtonType.OK);
                 alt.showAndWait();
@@ -94,23 +97,23 @@ public class MDIController implements Initializable {
         }
     }
     public void MenuCatgy_OnClick(ActionEvent actionEvent) {
-//        if (!stage_ctgry.isShowing()) {
-//            try {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Masters/category.fxml"));
-//                Parent root = (Parent) loader.load();
-//                CategoryController cc = loader.getController();
-//                scene_ctgry = new Scene(root);
-//                stage_ctgry.setScene(scene_ctgry);
-//                stage_ctgry.setResizable(false);
-//                stage_ctgry.setTitle("Category Master");
-//                stage_ctgry.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
-//                cc.setStage(stage_ctgry);
-//                stage_ctgry.show();
-////                setFadeInTransition(root);
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
+        if (!stage_ctgry.isShowing()) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Master/category.fxml"));
+                Parent root = (Parent) loader.load();
+                CategoryController cc = loader.getController();
+                scene_ctgry = new Scene(root);
+                stage_ctgry.setScene(scene_ctgry);
+                stage_ctgry.setResizable(false);
+                stage_ctgry.setTitle("Category Master");
+                stage_ctgry.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
+                cc.setStage(stage_ctgry);
+                stage_ctgry.show();
+                setFadeInTransition(root);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
     public void menuDept_onClick(ActionEvent actionEvent){
 //        if (!stage_dept.isShowing()) {
@@ -231,5 +234,11 @@ public class MDIController implements Initializable {
     public void btnItemsOnAction(ActionEvent actionEvent) {}
     public void btnLogoutOnAction(ActionEvent actionEvent) {}
     public void setStage(Stage stgMDI) {this.stage_MDI = stgMDI;}
+    public void setFadeInTransition(Parent root) {
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+        fadeTransition.setFromValue(0);
+        fadeTransition.setToValue(1);
+        fadeTransition.play();
+    }
 }
 

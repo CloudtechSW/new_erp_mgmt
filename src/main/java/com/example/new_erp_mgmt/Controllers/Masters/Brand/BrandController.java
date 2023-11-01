@@ -32,7 +32,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.util.Callback;
@@ -82,7 +81,7 @@ public class BrandController implements Initializable {
     public void initialize(URL location, ResourceBundle rb) {
         chkActive.setSelected(true);
         clear();
-        listenertbx();
+        listener();
         setTable();
         PopulateTable();
     }
@@ -170,7 +169,7 @@ public class BrandController implements Initializable {
             Logger.getLogger(BrandController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    private void listenertbx(){
+    private void listener(){
         txtName.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent t) {

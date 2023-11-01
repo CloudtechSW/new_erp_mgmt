@@ -49,14 +49,14 @@
                 <Button fx:id="btnClear" blendMode="SRC_ATOP" layoutX="292.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnClearonAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Clear" />
                 <CheckBox fx:id="chkActive" blendMode="SRC_ATOP" layoutX="438.0" layoutY="168.0" mnemonicParsing="false" text="Active" />
                 <Button fx:id="btnActive" blendMode="SRC_ATOP" graphicTextGap="2.0" layoutX="292.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnActiveonAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Activate" />
-            <Button fx:id="btnPrint" layoutX="4.0" layoutY="147.0" mnemonicParsing="false" onAction="#btnPrint_onAction" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transperant;" styleClass="close-btn" stylesheets="@../../css/button.css">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/printerrr32.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+                <Button fx:id="btnPrint" layoutX="4.0" layoutY="147.0" mnemonicParsing="false" onAction="#btnPrint_onAction" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transperant;" styleClass="close-btn" stylesheets="@../../css/button.css">
+                   <graphic>
+                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                            <Image url="@../../images/printerrr32.png" />
+                         </image>
+                      </ImageView>
+                   </graphic>
             </Button>
             </children>
         </AnchorPane>
