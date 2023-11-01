@@ -33,18 +33,18 @@
         </AnchorPane>
         <AnchorPane layoutY="73.0" prefHeight="190.0" prefWidth="510.0" styleClass="anchr" stylesheets="@../../css/anchor.css">
             <children>
-                <TextField fx:id="txtID" editable="false" focusTraversable="false" layoutX="223.0" layoutY="15.0" prefHeight="25.0" prefWidth="180.0" />
-                <TextField fx:id="txtName" layoutX="223.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" />
-                <TextField fx:id="txtRemarks" layoutX="223.0" layoutY="85.0" prefHeight="25.0" prefWidth="180.0" />
-                <Button fx:id="btnSave" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnSave_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Save" />
-                <Button fx:id="btnDelete" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnDelete_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Delete" />
-                <Button fx:id="btnUpdate" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnUpdate_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Update" />
-                <Button fx:id="btnClear" layoutX="272.0" layoutY="132.0"  mnemonicParsing="false" onAction="#btnClear_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Clear" />
-                <Button fx:id="btnActive" layoutX="272.0" layoutY="132.0"  mnemonicParsing="false" onAction="#btnActive_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Activate" />
-                <Label layoutX="101.0" layoutY="19.0" text="Department ID : " />
-                <Label layoutX="101.0" layoutY="54.0" text="Department Name : " />
-                <Label layoutX="101.0" layoutY="89.0" text="Remarks : " />
-                <CheckBox fx:id="chkActive" layoutX="434.0" layoutY="158.0" mnemonicParsing="false" text="Active" />
+                <TextField fx:id="txtID" blendMode="SRC_ATOP" editable="false" focusTraversable="false" layoutX="223.0" layoutY="15.0" prefHeight="25.0" prefWidth="180.0" />
+                <TextField fx:id="txtName" blendMode="SRC_ATOP" layoutX="223.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" />
+                <TextField fx:id="txtRemarks" blendMode="SRC_ATOP" layoutX="223.0" layoutY="85.0" prefHeight="25.0" prefWidth="180.0" />
+                <Button fx:id="btnSave" blendMode="SRC_ATOP" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnSave_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Save" />
+                <Button fx:id="btnDelete" blendMode="SRC_ATOP" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnDelete_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Delete" />
+                <Button fx:id="btnUpdate" blendMode="SRC_ATOP" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnUpdate_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Update" />
+                <Button fx:id="btnClear" blendMode="SRC_ATOP" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnClear_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Clear" />
+                <Button fx:id="btnActive" blendMode="SRC_ATOP" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnActive_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Activate" />
+                <Label blendMode="SRC_ATOP" layoutX="101.0" layoutY="19.0" text="Department ID : " />
+                <Label blendMode="SRC_ATOP" layoutX="101.0" layoutY="54.0" text="Department Name : " />
+                <Label blendMode="SRC_ATOP" layoutX="101.0" layoutY="89.0" text="Remarks : " />
+                <CheckBox fx:id="chkActive" blendMode="SRC_ATOP" layoutX="434.0" layoutY="158.0" mnemonicParsing="false" text="Active" />
                 <Button fx:id="btnPrint" layoutX="4.0" layoutY="147.0" mnemonicParsing="false" onAction="#btnPrint_onAction" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transperant;" styleClass="close-btn" stylesheets="@../../css/button.css">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

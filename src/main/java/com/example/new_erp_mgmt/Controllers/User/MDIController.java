@@ -135,22 +135,22 @@ public class MDIController implements Initializable {
         }
     }
     public void menuDesig_onClick(ActionEvent actionEvent){
-//        if(!stage_desig.isShowing()){
-//            try{
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Masters/designation.fxml"));
-//                Parent root =loader.load();
-//                DesignationController Dc = loader.getController();
-//                scene_desig = new Scene(root);
-//                stage_desig.setScene(scene_desig);
-//                stage_desig.setResizable(false);
-//                stage_desig.setTitle("Designation Master");
-//                stage_desig.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
-//                Dc.setStage(stage_desig);
-//                stage_desig.show();
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
+        if(!stage_desig.isShowing()){
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Master/designation.fxml"));
+                Parent root =loader.load();
+                DesignationController Dc = loader.getController();
+                scene_desig = new Scene(root);
+                stage_desig.setScene(scene_desig);
+                stage_desig.setResizable(false);
+                stage_desig.setTitle("Designation Master");
+                stage_desig.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
+                Dc.setStage(stage_desig);
+                stage_desig.show();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
     public void menuItem_onClick(ActionEvent actionEvent){
 //        if(!stage_item.isShowing()){
