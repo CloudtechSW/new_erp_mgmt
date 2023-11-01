@@ -116,23 +116,23 @@ public class MDIController implements Initializable {
         }
     }
     public void menuDept_onClick(ActionEvent actionEvent){
-//        if (!stage_dept.isShowing()) {
-//            try {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Masters/department.fxml"));
-//                Parent root = (Parent) loader.load();
-//                DepartmentController cc = loader.getController();
-//                scene_dept = new Scene(root);
-//                stage_dept.setScene(scene_dept);
-//                stage_dept.setResizable(false);
-//                stage_dept.setTitle("Department Master");
-//                stage_dept.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
-//                cc.setStage(stage_dept);
-//                stage_dept.show();
-////                setFadeInTransition(root);
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
+        if (!stage_dept.isShowing()) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Master/department.fxml"));
+                Parent root = (Parent) loader.load();
+                DepartmentController cc = loader.getController();
+                scene_dept = new Scene(root);
+                stage_dept.setScene(scene_dept);
+                stage_dept.setResizable(false);
+                stage_dept.setTitle("Department Master");
+                stage_dept.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
+                cc.setStage(stage_dept);
+                stage_dept.show();
+                setFadeInTransition(root);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
     public void menuDesig_onClick(ActionEvent actionEvent){
 //        if(!stage_desig.isShowing()){

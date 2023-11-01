@@ -95,8 +95,8 @@ public class LoginController implements Initializable {
                 scene_MDI = new Scene(root);
                 StgMDI.setScene(scene_MDI);
                 StgMDI.setResizable(false);
-                mc.setStage(StgMDI);
                 StgMDI.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
+                mc.setStage(StgMDI);
                 StgMDI.show();
                 FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), root);
                 fadeTransition.setFromValue(0);
@@ -105,10 +105,6 @@ public class LoginController implements Initializable {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        } else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Already Opened");
-            alert.show();
         }
     }
     public void btnLogin_OnAction(ActionEvent actionEvent) {

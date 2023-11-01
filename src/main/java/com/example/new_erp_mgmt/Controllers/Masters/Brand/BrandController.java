@@ -1,5 +1,6 @@
 package com.example.new_erp_mgmt.Controllers.Masters.Brand;
 
+import com.example.new_erp_mgmt.Controllers.User.LoginController;
 import com.example.new_erp_mgmt.Database.DBMysql;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -101,7 +102,7 @@ public class BrandController implements Initializable {
         String id = "0";
         try {
             Statement st = db.con.createStatement();
-            ResultSet rs = st.executeQuery("select count(code), max(code) FROM " + db.schema + ".tblBrand");
+            ResultSet rs = st.executeQuery("select count(code), max(code) FROM " + db.schema + ".tbl_brand");
             if (rs.next()) {
                 id = rs.getString(1);
                 int count = rs.getInt(1);
@@ -117,6 +118,8 @@ public class BrandController implements Initializable {
             }
             st.close();
         } catch (SQLException ex) {
+            Alert alt = new Alert(Alert.AlertType.ERROR, ex.getMessage(),ButtonType.OK);
+            alt.showAndWait();
             Logger.getLogger(BrandController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -137,7 +140,6 @@ public class BrandController implements Initializable {
                     @Override
                     protected void updateItem(objBrand item, boolean empty) {
                         super.updateItem(item, empty);
-
                         if (this.getTableRow() != null && item != null) {
                             setText(this.getTableRow().getIndex()+1+"");
                         } else {
@@ -224,7 +226,8 @@ public class BrandController implements Initializable {
     private void SaveBrand(){
         try {
             Statement st = db.con.createStatement();
-            int rs = st.executeUpdate("insert into " + db.schema + ".tbl_brand values(null,'" + txtID.getText() + "','" + txtName.getText().toUpperCase().trim() + "','" + txtRemarks.getText() + "',1)");
+            int rs = st.executeUpdate("insert into " + db.schema + ".tbl_brand values(null,'" + txtID.getText() + "','" + txtName.getText().toUpperCase().trim() + "','" + txtRemarks.getText() + "',1," +
+                    " '"+ LoginController.user +"','"+dateFormat.format(date)+"',null,null,null,null)");
             if (rs == 1) {
                 Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Save Successfully.... ", ButtonType.OK);
                 alert1.showAndWait();
@@ -259,7 +262,8 @@ public class BrandController implements Initializable {
     private void UpdateBrand(){
         try{
             Statement st = db.con.createStatement();
-            int rs = st.executeUpdate("update "+db.schema+".tbl_brand set name ='"+txtName.getText().toUpperCase().trim()+"',remarks= '"+txtRemarks.getText()+"' where code = '"+txtID.getText()+"' ");
+            int rs = st.executeUpdate("update "+db.schema+".tbl_brand set name ='"+txtName.getText().toUpperCase().trim()+"',remarks= '"+txtRemarks.getText()+"'," +
+                    " updated_by='"+LoginController.user+"', updated_on='"+dateFormat.format(date)+"' where code = '"+txtID.getText()+"' ");
             if(rs == 1){
                 Alert alt = new Alert(Alert.AlertType.CONFIRMATION,"Update Successfully....",ButtonType.OK);
                 alt.showAndWait();
@@ -290,7 +294,8 @@ public class BrandController implements Initializable {
     private void DeleteBrand(){
         try{
             Statement st = db.con.createStatement();
-            int rs  = st.executeUpdate("update "+db.schema+".tbl_brand set status= 0 where code ='"+txtID.getText()+"'");
+            int rs  = st.executeUpdate("update "+db.schema+".tbl_brand set status= 0, deleted_by = '"+LoginController.user+"'," +
+                    " deleted_on='"+dateFormat.format(date)+"' where code ='"+txtID.getText()+"'");
             if(rs==1){
                 Alert alt = new Alert(Alert.AlertType.CONFIRMATION,"Brand Deleted Successfully",ButtonType.OK);
                 alt.showAndWait();
@@ -431,7 +436,6 @@ public class BrandController implements Initializable {
             Alert alt = new Alert(Alert.AlertType.ERROR,ex.getMessage(),ButtonType.OK) ;
             alt.show();
             ex.printStackTrace();
-
         }
     }
     public void btnClose_onAction(ActionEvent actionEvent) {setFadeOutTransition();}
