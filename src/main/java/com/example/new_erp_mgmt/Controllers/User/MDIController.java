@@ -71,7 +71,6 @@ public class MDIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("user name == "+lc.user);
         lblUser.setText("Hi "+lc.user);
     }
     public void MenuBrand_OnClick(ActionEvent actionEvent) {
@@ -147,6 +146,7 @@ public class MDIController implements Initializable {
                 stage_desig.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
                 Dc.setStage(stage_desig);
                 stage_desig.show();
+                setFadeInTransition(root);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -188,22 +188,23 @@ public class MDIController implements Initializable {
 //        }
     }
     public void menuTax_onClick(ActionEvent actionEvent){
-//        if(!stage_tax.isShowing()){
-//            try{
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Masters/taxMaster.fxml"));
-//                Parent root = loader.load();
-//                TaxController tc = loader.getController();
-//                scene_tax = new Scene(root);
-//                stage_tax.setScene(scene_tax);
-//                stage_tax.setResizable(false);
-//                stage_tax.setTitle("Tax Master");
-//                stage_tax.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
-//                tc.setStage(stage_tax);
-//                stage_tax.show();
-//            } catch (Exception e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        if(!stage_tax.isShowing()){
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Master/taxMaster.fxml"));
+                Parent root = loader.load();
+                TaxController tc = loader.getController();
+                scene_tax = new Scene(root);
+                stage_tax.setScene(scene_tax);
+                stage_tax.setResizable(false);
+                stage_tax.setTitle("Tax Master");
+                stage_tax.getIcons().add(new Image(App.class.getResourceAsStream("/images/logo.png")));
+                tc.setStage(stage_tax);
+                stage_tax.show();
+                setFadeInTransition(root);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
     public void menuUnit_onClick(ActionEvent actionEvent){
 //        if(!stage_unit.isShowing()){

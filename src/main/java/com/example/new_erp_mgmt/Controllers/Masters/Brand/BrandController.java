@@ -77,7 +77,6 @@ public class BrandController implements Initializable {
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     DateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
     Date date = new Date();
-
     @Override
     public void initialize(URL location, ResourceBundle rb) {
         chkActive.setSelected(true);
