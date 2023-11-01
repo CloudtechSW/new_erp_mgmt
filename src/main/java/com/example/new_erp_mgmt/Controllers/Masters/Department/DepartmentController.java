@@ -361,10 +361,10 @@ public class DepartmentController implements Initializable {
             table.setWidth(UnitValue.createPercentValue(100));
             table.setHorizontalAlignment(com.itextpdf.layout.properties.HorizontalAlignment.CENTER);
 
-            Cell cell = new Cell().add(new Paragraph("Brand ID")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
+            Cell cell = new Cell().add(new Paragraph("Department ID")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
             table.addHeaderCell(cell);
 
-            cell = new Cell().add(new Paragraph("Brand Name")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
+            cell = new Cell().add(new Paragraph("Department Name")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
             table.addHeaderCell(cell);
 
             cell = new Cell().add(new Paragraph("Remarks")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
@@ -433,7 +433,6 @@ public class DepartmentController implements Initializable {
             Alert alt = new Alert(Alert.AlertType.ERROR,ex.getMessage(),ButtonType.OK) ;
             alt.show();
             ex.printStackTrace();
-
         }
     }
     public void btnClose_onAction(ActionEvent actionEvent) {setFadeOutTransition();}
