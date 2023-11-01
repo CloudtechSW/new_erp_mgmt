@@ -354,10 +354,10 @@ public class CategoryController implements Initializable {
             table.setWidth(UnitValue.createPercentValue(100));
             table.setHorizontalAlignment(HorizontalAlignment.CENTER);
 
-            Cell cell = new Cell().add(new Paragraph("Brand ID")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
+            Cell cell = new Cell().add(new Paragraph("Category ID")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
             table.addHeaderCell(cell);
 
-            cell = new Cell().add(new Paragraph("Brand Name")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
+            cell = new Cell().add(new Paragraph("Category Name")).setTextAlignment(TextAlignment.CENTER).setFont(head2);
             table.addHeaderCell(cell);
 
             cell = new Cell().add(new Paragraph("Remarks")).setTextAlignment(TextAlignment.CENTER).setFont(head2);

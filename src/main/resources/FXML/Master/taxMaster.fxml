@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<!--<AnchorPane xmlns="http://javafx.com/javafx"-->
-<!--            xmlns:fx="http://javafx.com/fxml"-->
-<!--            fx:controller="FXML.Master.TaxMaster"-->
-<!--            prefHeight="400.0" prefWidth="600.0">-->
-
-<!--</AnchorPane>-->
+<AnchorPane prefHeight="560.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.new_erp_mgmt.Controllers.Masters.Tax.TaxController">
+    <children>
+        <AnchorPane prefHeight="70.0" prefWidth="510.0">
+            <children>
+                <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/taxx64.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="74.0" layoutY="20.0" text="Tax Master" textFill="#660099">
+                    <font>
+                        <Font size="29.0" />
+                    </font>
+                </Label>
+                <Line endX="164.0" layoutX="331.0" layoutY="51.0" startX="-117.0" />
+                <Button fx:id="btnClose" layoutX="478.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnClose_onAction" styleClass="close-btn" stylesheets="@../../css/button.css" text="X" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="73.0" prefHeight="190.0" prefWidth="510.0" styleClass="anchr" stylesheets="@../../css/anchor.css">
+            <children>
+                <TextField fx:id="txtID" editable="false" focusTraversable="false" layoutX="223.0" layoutY="15.0" prefHeight="25.0" prefWidth="180.0" />
+                <TextField fx:id="txtValue" layoutX="223.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" />
+                <TextField fx:id="txtRemarks" layoutX="223.0" layoutY="85.0" prefHeight="25.0" prefWidth="180.0" />
+                <Button fx:id="btnSave" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnSave_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Save" />
+                <Button fx:id="btnDelete" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnDelete_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Delete" />
+                <Button fx:id="btnUpdate" layoutX="125.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnUpdate_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Update" />
+                <Button fx:id="btnClear" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnClear_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Clear" />
+                <Button fx:id="btnActive" layoutX="272.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnActive_onAction" prefHeight="35.0" prefWidth="110.0" styleClass="lion" stylesheets="@../../css/button.css" text="Activate" />
+                <Label layoutX="101.0" layoutY="19.0" text="Tax ID : " />
+                <Label layoutX="101.0" layoutY="54.0" text="Tax Value: " />
+                <Label layoutX="101.0" layoutY="89.0" text="Remarks : " />
+                <CheckBox fx:id="chkActive" layoutX="434.0" layoutY="158.0" mnemonicParsing="false" text="Active" />
+                <Button fx:id="btnPrint" layoutX="4.0" layoutY="147.0" mnemonicParsing="false" onAction="#btnPrint_onAction" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transperant;" styleClass="close-btn" stylesheets="@../../css/button.css">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/printerrr32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="267.0" prefHeight="290.0" prefWidth="510.0">
+            <children>
+                <TableView fx:id="tbl_view" layoutX="5.0" layoutY="5.0" prefHeight="280.0" prefWidth="500.0">
+                    <columns>
+                        <TableColumn fx:id="colSlNo" prefWidth="40.0" text="Sl.No" />
+                        <TableColumn fx:id="colID" prefWidth="100.0" text="Tax ID" />
+                        <TableColumn fx:id="colValue" prefWidth="190.0" text="Tax Value" />
+                        <TableColumn fx:id="colRemarks" prefWidth="110.0" text="Remarks" />
+                        <TableColumn fx:id="colStatus" prefWidth="58.0" text="Status" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+    <effect>
+        <InnerShadow />
+    </effect>
+</AnchorPane>
