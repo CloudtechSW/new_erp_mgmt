@@ -66,12 +66,12 @@ public class TaxController implements Initializable {
     public Button btnActive;
     public Button btnClose;
     public Button btnPrint;
-    public TableView<objTax> tbl_view;
+    public TableView<objTax> tblView;
     public TableColumn colSlNo;
-    public TableColumn col_id;
-    public TableColumn col_value;
-    public TableColumn col_remarks;
-    public TableColumn col_status;
+    public TableColumn colID;
+    public TableColumn colValue;
+    public TableColumn colRemarks;
+    public TableColumn colStatus;
     public CheckBox chkActive;
     private Stage stage_Tax;
     DBMysql db = new DBMysql();
@@ -123,10 +123,10 @@ public class TaxController implements Initializable {
         }
     }
     private void setTable(){
-        col_id.setCellValueFactory(new PropertyValueFactory<objTax,String>("code"));
-        col_value.setCellValueFactory(new PropertyValueFactory<objTax,String>("value"));
-        col_remarks.setCellValueFactory(new PropertyValueFactory<objTax,String>("remarks"));
-        col_status.setCellValueFactory(new PropertyValueFactory<objTax,String>("status"));
+        colID.setCellValueFactory(new PropertyValueFactory<objTax,String>("code"));
+        colValue.setCellValueFactory(new PropertyValueFactory<objTax,String>("value"));
+        colRemarks.setCellValueFactory(new PropertyValueFactory<objTax,String>("remarks"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<objTax,String>("status"));
         colSlNo.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<objTax, objTax>, ObservableValue<objTax>>() {
             @Override
             public ObservableValue<objTax> call(TableColumn.CellDataFeatures<objTax, objTax> p) {
@@ -149,7 +149,7 @@ public class TaxController implements Initializable {
             }
         });
         colSlNo.setSortable(false);
-        tbl_view.setItems(tblData);
+        tblView.setItems(tblData);
     }
     private void populateTable(){
         tblData.clear();
@@ -191,11 +191,11 @@ public class TaxController implements Initializable {
                 clear();
             }
         });
-        tbl_view.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        tblView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if(mouseEvent.getButton() == MouseButton.PRIMARY && !tbl_view.getSelectionModel().isEmpty()){
-                    fetchData(tbl_view.getSelectionModel().getSelectedItem());
+                if(mouseEvent.getButton() == MouseButton.PRIMARY && !tblView.getSelectionModel().isEmpty()){
+                    fetchData(tblView.getSelectionModel().getSelectedItem());
                 }
             }
         });
@@ -239,15 +239,15 @@ public class TaxController implements Initializable {
         }
     }
     private void updateValidation(){
-        if(tbl_view.getSelectionModel().isEmpty()){
+        if(tblView.getSelectionModel().isEmpty()){
             Alert alt1 = new Alert(Alert.AlertType.ERROR ,"Please Select a Tax Value from Table",ButtonType.OK);
             alt1.showAndWait();
-            if (alt1.getResult() == ButtonType.OK){tbl_view.requestFocus();}
+            if (alt1.getResult() == ButtonType.OK){tblView.requestFocus();}
         }else if(txtID.getText().equalsIgnoreCase("") || txtValue.getText().equalsIgnoreCase("") ) {
             Alert alt2 = new Alert(Alert.AlertType.ERROR, "Please Enter a Tax Value!!", ButtonType.OK);
             alt2.showAndWait();
             if (alt2.getResult() == ButtonType.OK) {txtValue.requestFocus();}
-        }else if(Objects.equals(tbl_view.getSelectionModel().getSelectedItem().status, "In Active")){
+        }else if(Objects.equals(tblView.getSelectionModel().getSelectedItem().status, "In Active")){
             Alert alt2 = new Alert(Alert.AlertType.ERROR, "Selected Tax Value is Already Deleted item. If you want to Update, Please Select Another Tax or ReActivate the Tax Value!!!", ButtonType.OK);
             alt2.showAndWait();
             if (alt2.getResult() == ButtonType.OK) {txtValue.requestFocus();}
@@ -276,14 +276,14 @@ public class TaxController implements Initializable {
         }
     }
     private void deleteValidation(){
-        if (tbl_view.getSelectionModel().isEmpty()){
+        if (tblView.getSelectionModel().isEmpty()){
             Alert alt = new Alert(Alert.AlertType.ERROR,"Please Select the Tax Value for Delete",ButtonType.OK);
             alt.showAndWait();
-            if(alt.getResult() == ButtonType.OK){tbl_view.requestFocus();}
-        } else if (tbl_view.getSelectionModel().getSelectedItem().status == "In Active") {
+            if(alt.getResult() == ButtonType.OK){tblView.requestFocus();}
+        } else if (tblView.getSelectionModel().getSelectedItem().status == "In Active") {
             Alert alt1 = new Alert(Alert.AlertType.ERROR, "Selected Tax is Already Deleted. Please Select Active Tax ", ButtonType.OK);
             alt1.showAndWait();
-            if (alt1.getResult() == ButtonType.OK) {tbl_view.requestFocus();}
+            if (alt1.getResult() == ButtonType.OK) {tblView.requestFocus();}
         } else{
             Alert alt2 = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure, You want to delete this Tax Value?",ButtonType.OK);
             alt2.showAndWait();

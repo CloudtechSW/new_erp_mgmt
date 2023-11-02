@@ -58,7 +58,7 @@
         </AnchorPane>
         <AnchorPane layoutY="267.0" prefHeight="290.0" prefWidth="510.0">
             <children>
-                <TableView fx:id="tbl_view" layoutX="5.0" layoutY="5.0" prefHeight="280.0" prefWidth="500.0">
+                <TableView fx:id="tblView" layoutX="5.0" layoutY="5.0" prefHeight="280.0" prefWidth="500.0">
                     <columns>
                         <TableColumn fx:id="colSlNo" prefWidth="40.0" text="Sl.No" />
                         <TableColumn fx:id="colID" prefWidth="100.0" text="Tax ID" />
